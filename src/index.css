@@ -1,0 +1,12 @@
+@import "tailwindcss";
+html, body {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family:"bystander" ;  src: url( ./assets/bystand.ttf);
+}
+@font-face {
+  font-family: "strange";
+  src: url(./assets/strange.ttf);
+}
