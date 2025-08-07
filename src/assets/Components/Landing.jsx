@@ -36,7 +36,7 @@ function Landing() {
 
     // Initialize Lenis smooth scrolling
     const lenis = new Lenis({
-      duration: 2.3,
+      duration: 1.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -8 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
