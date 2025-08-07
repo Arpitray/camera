@@ -5,7 +5,7 @@ html, body {
 
 /* Camera shadow styles for realistic depth */
 .mainCam {
-  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0 10px 25px rgb(0, 0, 0));
   transition: filter 0.1s ease-out;
 }
 
