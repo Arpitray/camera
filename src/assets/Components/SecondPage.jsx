@@ -18,9 +18,42 @@ function SecondPage() {
             </button>
         </div>
         <div className="right flex flex-col gap-10">
-            <div className="rec1 h-38 w-82 border-2 border-black"></div>
-            <div className="rec1 h-38 w-82 border-2 border-black"></div>
-            <div className="rec1 h-38 w-82 border-2 border-black"></div>
+            <div className="rec1 h-38 w-82 border-4 border-black">
+                <div className="flex flex-col w-full mt-4 h-full">
+                    <div className="line border-b-2 mx-2 border-black">
+                        <h1 className='font-semibold'>MGP</h1>
+                        <h1 className='text-sm'>Megapixels</h1>
+                    </div>
+                    <div className="marks mx-2 flex items-center gap-6 justify-between h-[40%]">
+                        <h1 className='text-5xl font-semibold'>45%</h1>
+                        <p className='text-sm leading-none mt-4 font-semibold'>A 12 MP camera can produce prints up to 16 x 20 inches at high quality-which is more than enough for most photographers.</p>
+                    </div>
+                </div>
+            </div>
+                        <div className="rec1 h-38 w-82 border-4 border-black">
+                <div className="flex flex-col w-full mt-4 h-full">
+                    <div className="line border-b-2 mx-2 border-black">
+                        <h1 className='font-semibold'>MGP</h1>
+                        <h1 className='text-sm'>Megapixels</h1>
+                    </div>
+                    <div className="marks mx-2 flex items-center gap-6 justify-between h-[40%]">
+                        <h1 className='text-5xl font-semibold'>57%</h1>
+                        <p className='text-sm leading-none mt-4 font-semibold'>A 12 MP camera can produce prints up to 16 x 20 inches at high quality-which is more than enough for most photographers.</p>
+                    </div>
+                </div>
+            </div>
+                        <div className="rec1 h-38 w-82 border-4 border-black">
+                <div className="flex flex-col w-full mt-4 h-full">
+                    <div className="line border-b-2 mx-2 border-black">
+                        <h1 className='font-semibold'>MGP</h1>
+                        <h1 className='text-sm'>Megapixels</h1>
+                    </div>
+                    <div className="marks mx-2 flex items-center gap-6 justify-between h-[40%]">
+                        <h1 className='text-5xl font-semibold'>72%</h1>
+                        <p className='text-sm leading-none mt-4 font-semibold'>A 12 MP camera can produce prints up to 16 x 20 inches at high quality-which is more than enough for most photographers.</p>
+                    </div>
+                </div>
+            </div>
             </div>
     </div>
   )

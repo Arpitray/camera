@@ -1,5 +1,5 @@
 import React from 'react'
-import Ccam1 from '../ccam1.jpg'
+import Ccam1 from '../ccam1.png'
 import Ccam3 from '../ccam3.jpg'
 import Image6 from '../image6.png'
 
@@ -11,7 +11,7 @@ function Fourthpage() {
         <h1 className='text-center text-7xl tracking-wide font-bold font-["bystander"]'>Collection</h1>
         </div>
     <div className="cameras flex gap-12 mt-21 justify-between w-full">
-    <div className="image1 h-82 w-98 flex flex-col">
+    <div className="image1 h-82 w-108 flex flex-col">
         <img className='object-cover h-full w-full' src={Ccam1} alt="" />
         <h1 className='text-center text-xl font-bold font-["bystander"]'>INTAX moon Eve</h1>
         <p className='text-center text-lg font-bold font-["bystander"]'>$500.00</p>
