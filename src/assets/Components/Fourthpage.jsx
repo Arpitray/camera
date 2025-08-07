@@ -1,6 +1,7 @@
 import React from 'react'
 import Ccam1 from '../ccam1.jpg'
 import Ccam3 from '../ccam3.jpg'
+import Image6 from '../image6.png'
 
 function Fourthpage() {
   return (
@@ -17,12 +18,12 @@ function Fourthpage() {
     </div>
         <div className="image2 h-82 w-98 flex flex-col">
         <img className='object-cover h-full w-full opacity-0' src={Ccam1} alt="" />
-        <h1 className='text-center text-xl font-bold font-["bystander"]'>INTAX moon Eve</h1>
+        <h1 className='text-center text-xl font-bold font-["bystander"]'>INTAX fujifilm</h1>
         <p className='text-center text-lg font-bold font-["bystander"]'>$500.00</p>
     </div>
-        <div className="image3 h-82 w-98 flex flex-col">
-        <img className='object-cover h-full w-full' src={Ccam3} alt="" />
-        <h1 className='text-center text-xl font-bold font-["bystander"]'>INTAX moon Eve</h1>
+        <div className="image3 h-112 w-98 flex flex-col mt-[-70px]">
+        <img className='object-cover h-full w-full' src={Image6} alt="" />
+        <h1 className='text-center text-xl font-bold font-["bystander"]'>INTAX polaroid</h1>
         <p className='text-center text-lg font-bold font-["bystander"]'>$500.00</p>
     </div>
 

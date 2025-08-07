@@ -26,15 +26,17 @@ function Landing() {
 
     // Initialize Lenis smooth scrolling
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 2.3,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -8 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 1,
+      mouseMultiplier: 0.8,
       smoothTouch: false,
-      touchMultiplier: 2,
+      touchMultiplier: 1.5,
       infinite: false,
+      syncTouch: true,
+      normalizeWheel: true,
     })
 
     // Connect Lenis with GSAP ScrollTrigger
@@ -64,8 +66,8 @@ function Landing() {
     gsap.timeline({
       scrollTrigger: {
         trigger: document.body,
-        start: "top 30%",
-        end: "45% bottom",
+        start: "top 40%",
+        end: "43% bottom", // Adjusted for footer content
         scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress
@@ -86,33 +88,47 @@ function Landing() {
             
             yPosition = easedProgress * (window.innerHeight * 0.8) 
             rotation = 50 + (easedProgress * 40) 
-            scale = 1.1 + (easedProgress * 0.4) 
+            scale = 1.1 + (easedProgress * 0.2) 
             
           } else {
             const pageProgress = (progress - 0.66) / 0.34
             const easedProgress = pageProgress * pageProgress * (3 - 2 * pageProgress)
             
-            yPosition = (window.innerHeight * 0.8) + (easedProgress * (window.innerHeight * 0.6)) 
+            yPosition = (window.innerHeight * 0.8) + (easedProgress * (window.innerHeight * 0.7)) 
             rotation = 90 + (easedProgress * -(40)) 
-            scale = 1.5 - (easedProgress * 0.3) 
+            scale = 1.3 - (easedProgress * 0.3) 
             
             const xPosition = -(easedProgress * (window.innerWidth * 0.3)) 
+            
+            // Calculate dynamic shadow based on position and rotation
+            const shadowIntensity = 0.15 + (progress * 0.25) // Shadow gets stronger as we scroll
+            const shadowBlur = 15 + (scale * 20) // Blur increases with scale
+            const shadowOffsetX = Math.sin(rotation * Math.PI / 180) * 15 // Shadow follows rotation
+            const shadowOffsetY = 10 + (yPosition * 0.01) // Shadow increases with height
             
             gsap.set(mainCam, {
               x: xPosition, 
               y: yPosition,
               rotation: rotation,
               scale: scale,
+              filter: `drop-shadow(${shadowOffsetX}px ${shadowOffsetY}px ${shadowBlur}px rgba(0, 0, 0, ${shadowIntensity}))`,
               ease: "none"
             })
             return 
           }
+          
+          // Calculate dynamic shadow for first two phases
+          const shadowIntensity = 0.15 + (progress * 0.25)
+          const shadowBlur = 15 + (scale * 20)
+          const shadowOffsetX = Math.sin(rotation * Math.PI / 180) * 15
+          const shadowOffsetY = 10 + (yPosition * 0.01)
           
           gsap.set(mainCam, {
             x: 0,
             y: yPosition,
             rotation: rotation,
             scale: scale,
+            filter: `drop-shadow(${shadowOffsetX}px ${shadowOffsetY}px ${shadowBlur}px rgba(0, 0, 0, ${shadowIntensity}))`,
             ease: "none" 
           })
         }
@@ -122,31 +138,62 @@ function Landing() {
     gsap.timeline({
       scrollTrigger: {
         trigger: document.body,
-        start: "50% bottom", 
-        end: "100% bottom", 
+        start: "43% bottom",
+        end: "85% bottom", 
         scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress
-          const easedProgress = progress * progress * (3 - 2 * progress)
           
           const startX = -(window.innerWidth * 0.3) 
-          const startY = window.innerHeight * 1.4 
+          const startY = window.innerHeight * 1.5 
           const startRotation = 50 
-          const startScale = 1.2 
+          const startScale = 1 
+          
+          const middleX = 0
+          const middleY = window.innerHeight * 2.6
+          const middleRotation = 0
+          const middleScale = 1.4
           
           const targetX = -50 
-          const targetY = window.innerHeight * 3.88 
+          const targetY = window.innerHeight * 4 
           const targetRotation = 0 
           const targetScale = 0.9 
           
-        
-          gsap.set(mainCam, {
-            x: startX + (easedProgress * (targetX - startX)),
-            y: startY + (easedProgress * (targetY - startY)),
-            rotation: startRotation + (easedProgress * (targetRotation - startRotation)),
-            scale: startScale + (easedProgress * (targetScale - startScale)),
-            ease: "none"
-          })
+          if (progress <= 0.5) {
+            const phaseProgress = progress / 0.5
+            const easedProgress = phaseProgress * phaseProgress * (3 - 2 * phaseProgress)
+            
+            const shadowIntensity = 0.4 + (phaseProgress * 0.2)
+            const shadowBlur = 25 + (middleScale * 15)
+            const shadowOffsetX = Math.sin(startRotation * (1 - easedProgress) * Math.PI / 180) * 20
+            const shadowOffsetY = 15 + (easedProgress * 10)
+            
+            gsap.set(mainCam, {
+              x: startX + (easedProgress * (middleX - startX)),
+              y: startY + (easedProgress * (middleY - startY)),
+              rotation: startRotation + (easedProgress * (middleRotation - startRotation)),
+              scale: startScale + (easedProgress * (middleScale - startScale)),
+              filter: `drop-shadow(${shadowOffsetX}px ${shadowOffsetY}px ${shadowBlur}px rgba(0, 0, 0, ${shadowIntensity}))`,
+              ease: "none"
+            })
+          } else {
+            const phaseProgress = (progress - 0.5) / 0.5
+            const easedProgress = phaseProgress * phaseProgress * (3 - 2 * phaseProgress)
+            
+            const shadowIntensity = 0.6 - (phaseProgress * 0.2)
+            const shadowBlur = 40 - (phaseProgress * 15)
+            const shadowOffsetX = -10 + (phaseProgress * -5)
+            const shadowOffsetY = 25 + (phaseProgress * 10)
+            
+            gsap.set(mainCam, {
+              x: middleX + (easedProgress * (targetX - middleX)),
+              y: middleY + (easedProgress * (targetY - middleY)),
+              rotation: middleRotation + (easedProgress * (targetRotation - middleRotation)),
+              scale: middleScale + (easedProgress * (targetScale - middleScale)),
+              filter: `drop-shadow(${shadowOffsetX}px ${shadowOffsetY}px ${shadowBlur}px rgba(0, 0, 0, ${shadowIntensity}))`,
+              ease: "none"
+            })
+          }
         }
       }
     })

@@ -3,6 +3,12 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Camera shadow styles for realistic depth */
+.mainCam {
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.7));
+  transition: filter 0.1s ease-out;
+}
+
 @font-face {
   font-family:"bystander" ;  src: url( ./assets/bystand.ttf);
 }
