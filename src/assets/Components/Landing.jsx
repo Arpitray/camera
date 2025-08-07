@@ -428,7 +428,7 @@ function Landing() {
         scrollTrigger: {
           trigger: document.body,
           start: "35% bottom",
-          end: "86% bottom", 
+          end: "75% bottom", 
           scrub: 1,
           onUpdate: (self) => {
             const progress = self.progress
@@ -444,7 +444,7 @@ function Landing() {
             const middleScale = 1.2 * responsiveScale
             
             const targetX = 0
-            const targetY = window.innerHeight * 3.35
+            const targetY = window.innerHeight * 3.79
             const targetRotation = 0 
             const targetScale = 1.2 * responsiveScale 
             
