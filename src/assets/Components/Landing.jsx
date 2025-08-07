@@ -65,13 +65,13 @@ function Landing() {
     gsap.set("nav", { y: -100, opacity: 0 })
     gsap.set(".left", { x: -100, opacity: 0 })
     gsap.set(".hero h1", { scale: 0, opacity: 0 })
-    gsap.set(mainCam, { rotation: 5, opacity:0, scale: 1.8 * responsiveScale })
+    gsap.set(mainCam, { rotation: 5, opacity:0, scale: 5 * responsiveScale })
 
     // Animate entrance
     tl.to("nav", { y: 0, opacity: 1, duration: 1, ease: "power3.out" })
       .to(".left", { x: 0, opacity: 1, duration: 1, ease: "power3.out" }, "-=0.5")
       .to(".hero h1", { scale: 1, opacity: 1, duration: 1.2, ease: "back.out(1.7)" }, "-=0.7")
-      .to(mainCam, { rotation: 40, opacity:1, duration: 0.8, ease: "power2.out" }, "-=0.5")
+      .to(mainCam, { rotation: 40, opacity:1, duration: 0.8, scale: 1, ease: "power2.out" }, "-=0.5")
 
     // FIRST SCROLLTRIGGER - Landing to Third Page (with device-specific timelines)
     const isDesktop = window.innerWidth >= 1024
