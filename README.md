@@ -1,4 +1,4 @@
-# Camera Animation Project
+# LensFlow Project
 
 A modern React application featuring smooth camera animations with GSAP and Lenis smooth scrolling.
 
