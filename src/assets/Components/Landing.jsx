@@ -428,7 +428,7 @@ function Landing() {
         scrollTrigger: {
           trigger: document.body,
           start: "30% bottom",
-          end: "75% bottom", 
+          end: "80% bottom", 
           scrub: 1,
           onUpdate: (self) => {
             const progress = self.progress

@@ -3,7 +3,7 @@ import foot from '../image1.png'
 
 function Footer() {
   return (
-    <div className='bg-[#F3E4D3] lg:h-[80vh]  flex flex-col md:flex-row w-full md:pt-30 md:items-center py-3 md:py-4 gap-6 md:gap-8 lg:gap-12 px-4 md:px-6 lg:px-8'>
+    <div className='bg-[#F3E4D3] lg:h-[80vh]  flex flex-col md:flex-row w-full md:pt-30 md:items-center py-22 lg:py:0 md:py-4 gap-6 md:gap-8 lg:gap-12 px-4 md:px-6  lg:px-8'>
      <div className="image w-full md:w-1/2 h-64 md:h-full md:flex md:items-center ">
      <img className='object-cover w-full h-full border-8 md:border-12 border-white rounded-2xl  overflow-hidden' src={foot} alt="" />
      </div>
