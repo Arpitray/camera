@@ -6,7 +6,7 @@ import Image4 from '../image4.png'
 
 function ThirdPage() {
   return (
-    <div className='third-page bg-[#F3E4D3] px-6 md:px-12 lg:px-16 py-18 lg:py-0'>
+    <div className='third-page bg-[#F3E4D3] px-6 md:px-12 lg:px-16 py-42 lg:py-0'>
       <h1 className='uppercase text-center w-full tracking-wider text-[60px] pt-12 lg:pt-0 md:text-[160px] lg:text-[250px] font-bold text-[#80320b] font-["bystander"]'>retroscope</h1>
       <div className="box1 flex flex-col md:flex-row justify-between gap-6 md:gap-0">
         <div className="image w-full md:w-96 lg:w-122 h-64 md:h-72 lg:h-82  border-8 border-white rounded-2xl overflow-hidden">

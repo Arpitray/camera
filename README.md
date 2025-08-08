@@ -2,6 +2,10 @@
 
 A modern React application featuring smooth camera animations with GSAP and Lenis smooth scrolling.
 
+## 🌐 Live Demo
+
+**[View Live Demo](https://fujjifilm-git-main-arpit-rays-projects.vercel.app/)**
+
 ## Features
 
 - 🎨 Smooth camera animations with GSAP

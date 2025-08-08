@@ -226,7 +226,7 @@ function Landing() {
         scrollTrigger: {
           trigger: document.body,
           start: "top 50%",
-          end: "35% bottom",
+          end: "25% bottom",
           scrub: 1,
           onUpdate: (self) => {
             const progress = self.progress
@@ -427,7 +427,7 @@ function Landing() {
       gsap.timeline({
         scrollTrigger: {
           trigger: document.body,
-          start: "35% bottom",
+          start: "30% bottom",
           end: "75% bottom", 
           scrub: 1,
           onUpdate: (self) => {
@@ -439,12 +439,12 @@ function Landing() {
             const startScale = 1 * responsiveScale
             
             const middleX = 0
-            const middleY = window.innerHeight * 2.0
+            const middleY = window.innerHeight * 2.6
             const middleRotation = 0
             const middleScale = 1.2 * responsiveScale
             
             const targetX = 0
-            const targetY = window.innerHeight * 3.79
+            const targetY = window.innerHeight * 4.4
             const targetRotation = 0 
             const targetScale = 1.2 * responsiveScale 
             
