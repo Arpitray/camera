@@ -117,11 +117,11 @@ function Landing() {
               
               const xPosition = -(easedProgress * (window.innerWidth * 0.3)) 
               
-              const shadowIntensity = 0.15 + (progress * 0.25)
+              const shadowIntensity = 0.90 + (progress * 0.25)
               const shadowBlur = 15 + (scale * 20)
-              const shadowOffsetX = Math.sin(rotation * Math.PI / 180) * 15
-              const shadowOffsetY = 10 + (yPosition * 0.01)
-              
+              const shadowOffsetX = Math.sin(rotation * Math.PI / 180) * 40
+              const shadowOffsetY = 40 + (yPosition * 0.01)
+
               gsap.set(mainCam, {
                 x: xPosition, 
                 y: yPosition,
@@ -133,11 +133,11 @@ function Landing() {
               return 
             }
             
-            const shadowIntensity = 0.15 + (progress * 0.25)
+            const shadowIntensity = 0.90 + (progress * 0.25)
             const shadowBlur = 15 + (scale * 20)
-            const shadowOffsetX = Math.sin(rotation * Math.PI / 180) * 15
-            const shadowOffsetY = 10 + (yPosition * 0.01)
-            
+            const shadowOffsetX = Math.sin(rotation * Math.PI / 180) * 40
+            const shadowOffsetY = 40 + (yPosition * 0.01)
+
             gsap.set(mainCam, {
               x: 0,
               y: yPosition,
@@ -188,11 +188,11 @@ function Landing() {
               
               const xPosition = -(easedProgress * (window.innerWidth * 0.3)) 
               
-              const shadowIntensity = 0.15 + (progress * 0.25)
+              const shadowIntensity = 0.90 + (progress * 0.25)
               const shadowBlur = 15 + (scale * 20)
-              const shadowOffsetX = Math.sin(rotation * Math.PI / 180) * 15
-              const shadowOffsetY = 10 + (yPosition * 0.01)
-              
+              const shadowOffsetX = Math.sin(rotation * Math.PI / 180) * 40
+              const shadowOffsetY = 40 + (yPosition * 0.01)
+
               gsap.set(mainCam, {
                 x: xPosition, 
                 y: yPosition,
@@ -203,12 +203,12 @@ function Landing() {
               })
               return 
             }
-            
-            const shadowIntensity = 0.15 + (progress * 0.25)
+
+            const shadowIntensity = 0.90 + (progress * 0.25)
             const shadowBlur = 15 + (scale * 20)
-            const shadowOffsetX = Math.sin(rotation * Math.PI / 180) * 15
-            const shadowOffsetY = 10 + (yPosition * 0.01)
-            
+            const shadowOffsetX = Math.sin(rotation * Math.PI / 180) * 40
+            const shadowOffsetY = 40 + (yPosition * 0.01)
+
             gsap.set(mainCam, {
               x: 0,
               y: yPosition,
@@ -324,10 +324,10 @@ function Landing() {
               const phaseProgress = progress / 0.5
               const easedProgress = phaseProgress * phaseProgress * (3 - 2 * phaseProgress)
               
-              const shadowIntensity = 0.4 + (phaseProgress * 0.2)
-              const shadowBlur = 25 + (middleScale * 15)
-              const shadowOffsetX = Math.sin(startRotation * (1 - easedProgress) * Math.PI / 180) * 20
-              const shadowOffsetY = 15 + (easedProgress * 10)
+              const shadowIntensity = 0.90 + (phaseProgress * 0.25)
+              const shadowBlur = 10 + (middleScale * 10)
+              const shadowOffsetX = Math.sin(startRotation * (1 - easedProgress) * Math.PI / 180) * 40
+              const shadowOffsetY = 40 + (easedProgress * 10)
               
               gsap.set(mainCam, {
                 x: startX + (easedProgress * (middleX - startX)),
@@ -341,10 +341,10 @@ function Landing() {
               const phaseProgress = (progress - 0.5) / 0.5
               const easedProgress = phaseProgress * phaseProgress * (3 - 2 * phaseProgress)
               
-              const shadowIntensity = 0.6 - (phaseProgress * 0.2)
-              const shadowBlur = 40 - (phaseProgress * 15)
+              const shadowIntensity = 1.15 - (phaseProgress * 0.25)
+              const shadowBlur = 35 - (phaseProgress * 10)
               const shadowOffsetX = -10 + (phaseProgress * -5)
-              const shadowOffsetY = 25 + (phaseProgress * 10)
+              const shadowOffsetY = 50 + (phaseProgress * 10)
               
               gsap.set(mainCam, {
                 x: middleX + (easedProgress * (targetX - middleX)),
