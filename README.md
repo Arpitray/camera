@@ -4,7 +4,7 @@ A modern React application featuring smooth camera animations with GSAP and Leni
 
 ## 🌐 Live Demo
 
-**[View Live Demo](https://fujjifilm-git-main-arpit-rays-projects.vercel.app/)**
+**[View Live Demo](https://camera-smoky.vercel.app/)**
 
 ## Features
 
