@@ -361,7 +361,7 @@ function Landing({ intaxFujifilmRef }) {
         scrollTrigger: {
           trigger: document.body,
           start: "60% bottom",
-          end: "95% bottom", 
+          end: "78% bottom", 
           scrub: 1,
           onUpdate: (self) => {
             const progress = self.progress
@@ -371,7 +371,7 @@ function Landing({ intaxFujifilmRef }) {
             if (intaxFujifilmRef && intaxFujifilmRef.current) {
               const rect = intaxFujifilmRef.current.getBoundingClientRect();
               // Use the element's current position relative to viewport + some offset
-              targetY = window.scrollY + rect.top - (window.innerHeight * 0.3);
+              targetY = window.scrollY + rect.top - (window.innerHeight * 0.5);
             }
             
             const startX = -(window.innerWidth * 0.3) 
@@ -380,11 +380,11 @@ function Landing({ intaxFujifilmRef }) {
             const startScale = 1 * responsiveScale
             
             const middleX = 0
-            const middleY = window.innerHeight * 2
+            const middleY = window.innerHeight * 2.5
             const middleRotation = 0
             const middleScale = 1.4 * responsiveScale
             
-            const targetX = window.innerWidth * 0.18
+            const targetX = window.innerWidth * 0.22
             const targetRotation = 0 
             const targetScale = 0.9 * responsiveScale 
             
@@ -442,7 +442,7 @@ function Landing({ intaxFujifilmRef }) {
             if (intaxFujifilmRef && intaxFujifilmRef.current) {
               const rect = intaxFujifilmRef.current.getBoundingClientRect();
               // Use the element's current position relative to viewport + some offset
-              targetY = window.scrollY + rect.top - (window.innerHeight * 0.2);
+              targetY = window.scrollY + rect.top - (window.innerHeight * 0.6);
             }
             
             const startX = -(window.innerWidth * 0.25) 
