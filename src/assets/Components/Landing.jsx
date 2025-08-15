@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 
 
-function Landing() {
+function Landing({ intaxFujifilmRef }) {
   const mainCamRef = useRef(null)
 
   const animationConfig = {
@@ -293,9 +293,8 @@ function Landing() {
       })
     }
 
-    // SECOND SCROLLTRIGGER - Third Page to Fourth Page (existing device-specific timelines)
+    // SECOND SCROLLTRIGGER - Third Page to Fourth Page (updated to use intaxFujifilmRef)
     if (isDesktop) {
-      // DESKTOP SCROLLTRIGGER - Original logic (unchanged)
       gsap.timeline({
         scrollTrigger: {
           trigger: document.body,
@@ -304,31 +303,31 @@ function Landing() {
           scrub: 1,
           onUpdate: (self) => {
             const progress = self.progress
-            
+            // Get the Y position of the INTAX fujifilm heading relative to the current scroll
+            let targetY = window.innerHeight * 3;
+            if (intaxFujifilmRef && intaxFujifilmRef.current) {
+              const rect = intaxFujifilmRef.current.getBoundingClientRect();
+              // Use the element's current position relative to viewport + some offset
+              targetY = window.scrollY + rect.top - (window.innerHeight * 0.7);
+            }
             const startX = -(window.innerWidth * 0.3) 
             const startY = window.innerHeight * 1.5 
             const startRotation = 50 
             const startScale = 1
-            
             const middleX = 0
             const middleY = window.innerHeight * 2.6
             const middleRotation = 0
             const middleScale = 1.4
-            
             const targetX = -50
-            const targetY = window.innerHeight * 3.9
             const targetRotation = 0 
             const targetScale = 0.9
-            
             if (progress <= 0.5) {
               const phaseProgress = progress / 0.5
               const easedProgress = phaseProgress * phaseProgress * (3 - 2 * phaseProgress)
-              
               const shadowIntensity = 0.90 + (phaseProgress * 0.25)
               const shadowBlur = 10 + (middleScale * 10)
               const shadowOffsetX = Math.sin(startRotation * (1 - easedProgress) * Math.PI / 180) * 40
               const shadowOffsetY = 40 + (easedProgress * 10)
-              
               gsap.set(mainCam, {
                 x: startX + (easedProgress * (middleX - startX)),
                 y: startY + (easedProgress * (middleY - startY)),
@@ -340,12 +339,10 @@ function Landing() {
             } else {
               const phaseProgress = (progress - 0.5) / 0.5
               const easedProgress = phaseProgress * phaseProgress * (3 - 2 * phaseProgress)
-              
               const shadowIntensity = 1.15 - (phaseProgress * 0.25)
               const shadowBlur = 35 - (phaseProgress * 10)
               const shadowOffsetX = -10 + (phaseProgress * -5)
               const shadowOffsetY = 50 + (phaseProgress * 10)
-              
               gsap.set(mainCam, {
                 x: middleX + (easedProgress * (targetX - middleX)),
                 y: middleY + (easedProgress * (targetY - middleY)),
@@ -359,7 +356,7 @@ function Landing() {
         }
       })
     } else if (isTablet) {
-      // IPAD SCROLLTRIGGER - Existing iPad logic (unchanged)
+      // IPAD SCROLLTRIGGER - Updated to use intaxFujifilmRef
       gsap.timeline({
         scrollTrigger: {
           trigger: document.body,
@@ -368,6 +365,14 @@ function Landing() {
           scrub: 1,
           onUpdate: (self) => {
             const progress = self.progress
+            
+            // Get the Y position of the INTAX fujifilm heading relative to the current scroll
+            let targetY = window.innerHeight * 2.57;
+            if (intaxFujifilmRef && intaxFujifilmRef.current) {
+              const rect = intaxFujifilmRef.current.getBoundingClientRect();
+              // Use the element's current position relative to viewport + some offset
+              targetY = window.scrollY + rect.top - (window.innerHeight * 0.3);
+            }
             
             const startX = -(window.innerWidth * 0.3) 
             const startY = window.innerHeight * 1.5
@@ -380,7 +385,6 @@ function Landing() {
             const middleScale = 1.4 * responsiveScale
             
             const targetX = window.innerWidth * 0.18
-            const targetY = window.innerHeight * 2.57
             const targetRotation = 0 
             const targetScale = 0.9 * responsiveScale 
             
@@ -423,7 +427,7 @@ function Landing() {
         }
       })
     } else if (isMobile) {
-      // MOBILE SCROLLTRIGGER - Separate logic for mobile only
+      // MOBILE SCROLLTRIGGER - Updated to use intaxFujifilmRef
       gsap.timeline({
         scrollTrigger: {
           trigger: document.body,
@@ -432,6 +436,14 @@ function Landing() {
           scrub: 1,
           onUpdate: (self) => {
             const progress = self.progress
+            
+            // Get the Y position of the INTAX fujifilm heading relative to the current scroll
+            let targetY = window.innerHeight * 4.4;
+            if (intaxFujifilmRef && intaxFujifilmRef.current) {
+              const rect = intaxFujifilmRef.current.getBoundingClientRect();
+              // Use the element's current position relative to viewport + some offset
+              targetY = window.scrollY + rect.top - (window.innerHeight * 0.2);
+            }
             
             const startX = -(window.innerWidth * 0.25) 
             const startY = window.innerHeight * 1.1 
@@ -444,7 +456,6 @@ function Landing() {
             const middleScale = 1.2 * responsiveScale
             
             const targetX = 0
-            const targetY = window.innerHeight * 4.4
             const targetRotation = 0 
             const targetScale = 1.2 * responsiveScale 
             
